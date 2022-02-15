@@ -27,6 +27,7 @@ public class GameFild extends JPanel implements ActionListener {
     public GameFild(){
         setBackground(Color.black);
         loadImages();
+        initGame();
     }
 
     public void initGame(){
@@ -69,11 +70,14 @@ public class GameFild extends JPanel implements ActionListener {
             x[i] = x[i-1];
             y[i] = y[i-1];
         }
-        if (left){
+        if(left){
+            x[0] -= DOT_SIZE;
+        }
+        if(right){
             x[0] += DOT_SIZE;
         } if(up){
-            y[0] += DOT_SIZE;
-        } if (down){
+            y[0] -= DOT_SIZE;
+        } if(down){
             y[0] += DOT_SIZE;
         }
     }
